@@ -6,7 +6,7 @@ function App() {
   const [linkSelected, setLinkSelected] = useState(null)
 
   const getLinks = async () => {
-    const res = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSKFIMxy_CUYbLQ9bd-cpsSu0NeWbqA1HkMuWzYjTaWmJrYHi_jZpKHHKlErvhY_Lb8ZoOwE_SQnfem/pub?gid=0&output=csv")
+    const res = await fetch(import.meta.env.VITE_URL_API)
     const data = await res.text()
     const parsed = await new Promise((res, rej) => {
       Papa.parse(data, {header: true, complete: res, error: rej})
