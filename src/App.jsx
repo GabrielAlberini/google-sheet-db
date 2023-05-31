@@ -17,14 +17,14 @@ function App() {
   useEffect(()=> {
     getLinks()
   }, [])
-
+  
   const handleClick = (link) => {
     setLinkSelected(link)
   }
+  
 
   const memoizedData = useMemo(() => data, [data]);
   
-  console.log(data)
 
   return (
     <>
